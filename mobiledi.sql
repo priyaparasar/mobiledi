@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2015 at 04:19 AM
+-- Generation Time: Sep 22, 2015 at 04:36 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -167,8 +167,8 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://localhost:8081/mobiledi', 'yes'),
-(2, 'home', 'http://localhost:8081/mobiledi', 'yes'),
+(1, 'siteurl', 'http://localhost/mobiledi', 'yes'),
+(2, 'home', 'http://localhost/mobiledi', 'yes'),
 (3, 'blogname', 'Mobile-DI', 'yes'),
 (4, 'blogdescription', '', 'yes'),
 (5, 'users_can_register', '0', 'yes'),
