@@ -54,7 +54,7 @@
 		})();
 
 		$(function() {
-		  $('a[href*=#]:not([href=#])').click(function() {
+		  $('a[href*=#]:not([href=#],.wc-tabs a)').click(function() {
 		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 		      var target = $(this.hash);
 		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -111,9 +111,15 @@
 		});
 	}
 
-	var panelsStyling = function() {
-		$(".panel-row-style[style^='color'], .panel-row-style[style*='; color']").find('h1,h2,h3,h4,h5,h6,a,.fa, div, span').css('color','inherit');
-		$(".panel-row-style[style*='background-image']").append( '<div class="overlay"></div>' );
+	var panelsStyling = function() {	
+		$(".panel-row-style").each( function() {
+			if ($(this).data('hascolor')) {
+				$(this).find('h1,h2,h3,h4,h5,h6,a,.fa, div, span').css('color','inherit');
+			}
+			if ($(this).data('hasbg')) {
+				$(this).append( '<div class="overlay"></div>' );
+			}			
+		});
 	};
 
 	var scrolls = function() {

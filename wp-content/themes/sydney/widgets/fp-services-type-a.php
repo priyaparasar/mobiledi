@@ -122,11 +122,15 @@ class Sydney_Services_Type_A extends WP_Widget {
 						<div class="service col-md-6">
 						<?php endif; ?>
 							<div class="roll-icon-box">
-								<?php if ($icon) : ?>			
+								<?php if ( has_post_thumbnail() ) : ?>
+									<div class="service-thumb">
+										<?php the_post_thumbnail('sydney-service-thumb'); ?>
+									</div>
+								<?php elseif ($icon) : ?>			
 									<div class="icon">
 										<?php echo '<i class="fa ' . esc_html($icon) . '"></i>'; ?>
 									</div>
-								<?php endif; ?>							
+								<?php endif; ?>
 								<div class="content">
 									<h3>
 										<?php if ($link) : ?>

@@ -134,12 +134,18 @@ function sydney_row_styles_output($attr, $style) {
 
 	if(!empty($style['bottom_border'])) $attr['style'] .= 'border-bottom: 1px solid '. esc_attr($style['bottom_border']) . ';';
 	if(!empty($style['background'])) $attr['style'] .= 'background-color: ' . esc_attr($style['background']) . ';';
-	if(!empty($style['color'])) $attr['style'] .= 'color: ' . esc_attr($style['color']) . ';';
+	
+	if(!empty($style['color'])) {
+		$attr['style'] .= 'color: ' . esc_attr($style['color']) . ';';
+		$attr['data-hascolor'] = 'hascolor';
+	}
+	
 	if(!empty($style['align'])) $attr['style'] .= 'text-align: center;';
 	if(!empty( $style['background_image'] )) {
 		$url = wp_get_attachment_image_src( $style['background_image'], 'full' );
 		if( !empty($url) ) {
 			$attr['style'] .= 'background-image: url(' . esc_url($url[0]) . ');';
+			$attr['data-hasbg'] = 'hasbg';
 		}
 	}
 	if(!empty($style['padding'])) {

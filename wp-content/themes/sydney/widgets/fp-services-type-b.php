@@ -136,11 +136,15 @@ class Sydney_Services_Type_B extends WP_Widget {
 						<?php $link = get_post_meta( get_the_ID(), 'wpcf-service-link', true ); ?>
 						<div class="service clearfix <?php echo $cols_no; ?>">
 							<div class="list-item">
-								<?php if ($icon) : ?>			
+								<?php if ( has_post_thumbnail() ) : ?>
+									<div class="service-thumb">
+										<?php the_post_thumbnail('sydney-service-thumb'); ?>
+									</div>
+								<?php elseif ($icon) : ?>			
 									<div class="icon">
 										<?php echo '<i class="fa ' . esc_html($icon) . '"></i>'; ?>
 									</div>
-								<?php endif; ?>							
+								<?php endif; ?>
 								<div class="content">
 									<h3>
 										<?php if ($link) : ?>

@@ -1,5 +1,13 @@
 Changelog
 
+9 September 2015 - 1.15
+--------------------------------------
+- added featured images support for services + new image size;
+- medium thumbs image size is now cropped;
+- fixed WooCommerce tabs incompatibility;
+- minor CSS addition;
+- reworked jQuery row colors setting.
+
 26 August 2015 - 1.14
 --------------------------------------
 - changed PHP 4 constructors in widgets.
